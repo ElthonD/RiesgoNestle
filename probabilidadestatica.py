@@ -208,9 +208,9 @@ def createPage():
                 selected_diaxx = containerxxTS1.multiselect('Destino(s):', sorted_unique_diaxx, key="GG1xx") 
                 df_selected_diaxx = df_selected_mesxx[df_selected_mesxx['EstadoDestino'].isin(selected_diaxx)].astype(str)
 
-        cx1, cx2, cx3, cx4 = st.columns(4)
+        cx1, cx2, cx3 = st.columns(3)
 
-        with cx2,cx3:
+        with cx2:
             table = pd.pivot_table(df_selected_diaxx, index = ["Cliente", "EstadoOrigen", "EstadoDestino", "Distancia", "DuracionEstimada", "Estadías NOM-087"], columns = ["Anomalía"], aggfunc = ["size"], fill_value=0)
             st.dataframe(table)
             #st.table(table)
