@@ -210,7 +210,7 @@ def createPage():
 
         cx1, cx2, cx3 = st.columns(3)
 
-        with cx3:
+        with cx2:
             table = pd.pivot_table(df_selected_diaxx, index = ["Cliente", "EstadoOrigen", "EstadoDestino", "Distancia", "DuracionEstimada", "Estadías NOM-087"], columns = ["Anomalía"], aggfunc = ["size"], fill_value=0)
             st.dataframe(table)
             #st.table(table)
