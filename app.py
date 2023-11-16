@@ -11,12 +11,13 @@ st.set_page_config(page_title='AI27 Nestlé', page_icon=im, layout="wide")
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-v_menu=["Inicio", "Riesgo de los Servicios", "Mapas Planner", "Carga de Trabajo", "Reglas de Negocio"]
+#v_menu=["Inicio", "Riesgo de los Servicios", "Mapas Planner", "Carga de Trabajo", "Reglas de Negocio"]
+v_menu=["Inicio", "Riesgo de los Servicios", "Mapas Planner", "Reglas de Negocio"]
 
 selected = option_menu(
     menu_title=None,  # required
-    options=["Inicio", "Riesgo de los Servicios", "Mapas Planner", "Carga de Trabajo", "Reglas de Negocio"],  # required 
-    icons=["house", "percent", "map", "graph-up", "list-ol"],  # optional
+    options=["Inicio", "Riesgo de los Servicios", "Mapas Planner", "Reglas de Negocio"],  # required 
+    icons=["house", "percent", "map", "list-ol"],  # optional
     menu_icon="cast",  # optional
     default_index=0,  # optional
     orientation="horizontal",
@@ -37,8 +38,8 @@ if selected=="Riesgo de los Servicios":
 if selected=="Mapas Planner":
     mapasligero.createPage()
 
-if selected=="Carga de Trabajo":
-    pronostico.createPage()
+#if selected=="Carga de Trabajo":
+    #pronostico.createPage()
 
 if selected=="Reglas de Negocio":
     reglasnegocios.createPage()
